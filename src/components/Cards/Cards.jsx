@@ -10,16 +10,26 @@ const Cards = () => {
     useEffect(() => {
         fetch("./data.json")
             .then((res) => res.json())
-            //  .then((data)=>console.log(data));
+            
             .then((data) => setAllCourse(data));
     }, []);
     const handleAddCourse = (course) => {
-        // console.log(course)
-        // console.log(selectedCourses)
-        setSelectedCourses([...selectedCourses, course])
-
+        
+        const isExist=selectedCourses.find((item)=>item.id==course.id);
+        // console.log(isExist)
+let count =course.price;
+        if(isExist){
+            return alert("opps")
+        }else{
+            selectedCourses.forEach((item)=>{
+                count=count+item.price;
+            });
+            setTotalPrice(count);
+        setSelectedCourses([...selectedCourses, course]);
+        // setTotalPrice(cost);
+    }
     };
-    // console.log(selectedCourse)
+   
     return (
 
         <div className='flex  md:flex-row flex-col-reverse justify-between '>
@@ -53,7 +63,10 @@ const Cards = () => {
             </div>
             <div >
                 <div className="shadow-lg rounded-lg p-4">
-                    <Cart selectedCourses={selectedCourses}>
+                    <Cart 
+                    selectedCourses={selectedCourses}
+                    totalPrice={totalPrice}
+                    >
 
                     </Cart>
                 </div>

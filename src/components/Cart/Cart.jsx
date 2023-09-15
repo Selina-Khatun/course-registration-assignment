@@ -1,7 +1,8 @@
 
 
-const Cart = ({ selectedCourses }) => {
-   
+const Cart = ({ selectedCourses,totalPrice}) => {
+//    console.log(totalPrice);
+
     return (
         <div className="text-start">
             <h4 className=" py-2  border-b-2">Credit Hour Remaining 7 hr</h4>
@@ -17,7 +18,7 @@ const Cart = ({ selectedCourses }) => {
 
 
             <p className=" py-2 border-y-2 my-3">Total Credit Hour : 13</p>
-            <p >Total Price : 48000 USD</p>
+            <p >Total Price : {totalPrice} USD</p>
         </div>
     );
 };
