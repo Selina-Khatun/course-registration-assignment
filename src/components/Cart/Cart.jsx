@@ -1,6 +1,6 @@
 
 
-const Cart = ({ selectedCourses,totalPrice}) => {
+const Cart = ({ selectedCourses,totalPrice,totalCredit}) => {
 //    console.log(totalPrice);
 
     return (
@@ -17,7 +17,7 @@ const Cart = ({ selectedCourses,totalPrice}) => {
 
 
 
-            <p className=" py-2 border-y-2 my-3">Total Credit Hour : 13</p>
+            <p className=" py-2 border-y-2 my-3">Total Credit Hour : {totalCredit}</p>
             <p >Total Price : {totalPrice} USD</p>
         </div>
     );
