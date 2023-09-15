@@ -1,11 +1,11 @@
 
 
-const Cart = ({ selectedCourses,totalPrice,totalCredit}) => {
+const Cart = ({ selectedCourses,totalPrice,totalCredit,remaining}) => {
 //    console.log(totalPrice);
 
     return (
         <div className="text-start">
-            <h4 className=" py-2  border-b-2">Credit Hour Remaining 7 hr</h4>
+            <h4 className=" py-2  border-b-2 text-[#2F80ED]">Credit Hour Remaining {remaining} hr</h4>
             <h3 className="py-2">Course Name</h3>
 
 

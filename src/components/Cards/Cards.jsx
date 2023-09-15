@@ -4,7 +4,7 @@ import Cart from "../Cart/Cart";
 const Cards = () => {
     const [allCourse, setAllCourse] = useState([]);
     const [selectedCourses, setSelectedCourses] = useState([]);
-    const [remaining, setRemaining] = useState([]);
+    const [remaining, setRemaining] = useState([20]);
     const [totalCredit, setTotalCredit] = useState([]);
     const [totalPrice, setTotalPrice] = useState([]);
     useEffect(() => {
@@ -25,16 +25,29 @@ const Cards = () => {
                 count = count + item.price;
             });
 
-            let credit =course.credit;
-            selectedCourses.forEach((item) => {
-                credit=credit+item.credit;
-            });
-            
+
+        }
+
+
+        let credit = course.credit;
+        selectedCourses.forEach((item) => {
+            credit = credit + item.credit;
+     
+    });
+    const totalRemaining = 20 - credit;
+        if (credit > 21 || totalRemaining<0) {
+            return alert("nooooo...")
+           
+        }else{
+
             setTotalCredit(credit);
             setTotalPrice(count);
+            setRemaining(totalRemaining);
             setSelectedCourses([...selectedCourses, course]);
-            // setTotalPrice(cost);
-        }
+            
+        };
+        
+
     };
 
     return (
@@ -74,6 +87,7 @@ const Cards = () => {
                         selectedCourses={selectedCourses}
                         totalPrice={totalPrice}
                         totalCredit={totalCredit}
+                        remaining={remaining}
                     >
 
                     </Cart>
