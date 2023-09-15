@@ -1,9 +1,23 @@
 
 
-const Cart = () => {
+const Cart = ({ selectedCourses }) => {
+   
     return (
-        <div>
-            cart
+        <div className="text-start">
+            <h4 className=" py-2  border-b-2">Credit Hour Remaining 7 hr</h4>
+            <h3 className="py-2">Course Name</h3>
+
+
+{selectedCourses.map((course, index) => (
+  <li className="text-xs p-1 list-none" key={index}>
+    {`${index + 1+' '}. ${course.course_name}`}
+  </li>
+))}
+
+
+
+            <p className=" py-2 border-y-2 my-3">Total Credit Hour : 13</p>
+            <p >Total Price : 48000 USD</p>
         </div>
     );
 };

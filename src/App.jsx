@@ -10,10 +10,8 @@ function App() {
   return (
     <>
       <Header></Header>
-      <div className='flex  md:flex-row flex-col-reverse justify-between '>
       <Cards></Cards>
-      <Cart></Cart>
-      </div>
+      
 
 
     </>
