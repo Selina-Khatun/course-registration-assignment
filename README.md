@@ -1,15 +1,16 @@
 #  Add  3 Project features
-## * Interactive Course Selection:
+## 1. Interactive Course Selection:
 
 ### Feature Description:
  Our website allows users to interactively select courses of interest. By clicking `Select`button on course cards
 , users can add them to their course list. The selected courses are displayed for review, making it easy for users to track their chosen subjects.
 
-## * Informative Course Cards:
+## 2. Informative Course Cards:
 
 ### Feature Description:
  Each course card on our website is designed to provide informative details about the course, helping users make informed decisions. Users can find information such as course descriptions, price, credit and etc.
- ## * Interactive Toast Notifications:
+
+ ## 3. Interactive Toast Notifications:
  ### Feature Description:
   Our website features interactive toast notifications that provide feedback to users based on their interactions. These notifications appear at the top of the screen and automatically disappear after a few seconds. 
 

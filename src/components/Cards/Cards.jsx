@@ -62,7 +62,7 @@ const Cards = () => {
     return (
 
         <div className='flex  md:flex-row flex-col-reverse justify-between '>
-         
+
             <div className=" flex-1 grid grid-cols-3">
                 {allCourse.map((course) => (
                     <div key={course.id} className="card  m-5 bg-base-100 shadow-xl rounded-lg">
