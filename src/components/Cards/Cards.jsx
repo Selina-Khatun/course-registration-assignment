@@ -3,14 +3,17 @@ import Cart from "../Cart/Cart";
 import { toast } from "react-toastify";
 
 const Cards = () => {
+
     // Toast declare
-    const notify = () => toast("Already Selected");
-    const endCredit = () =>toast("Sorry your remaining credit is 0")
+    const notify = () => toast("The Course is Already Selected");
+    const endCredit = () =>toast("Sorry , your remaining credit is insufficient")
+
     const [allCourse, setAllCourse] = useState([]);
     const [selectedCourses, setSelectedCourses] = useState([]);
     const [remaining, setRemaining] = useState([20]);
     const [totalCredit, setTotalCredit] = useState([]);
     const [totalPrice, setTotalPrice] = useState([]);
+
     useEffect(() => {
         fetch("./data.json")
             .then((res) => res.json())
@@ -20,10 +23,10 @@ const Cards = () => {
     const handleAddCourse = (course) => {
 
         const isExist = selectedCourses.find((item) => item.id == course.id);
-        // console.log(isExist)
+       
         let count = course.price;
         if (isExist) {
-            // return alert("opps")
+            
             return notify()
         } else {
             selectedCourses.forEach((item) => {
@@ -41,7 +44,7 @@ const Cards = () => {
     });
     const totalRemaining = 20 - credit;
         if (credit > 21 || totalRemaining<0) {
-            // return alert("nooooo...")
+           
             return endCredit()
            
         }else{
@@ -59,6 +62,7 @@ const Cards = () => {
     return (
 
         <div className='flex  md:flex-row flex-col-reverse justify-between '>
+         
             <div className=" flex-1 grid grid-cols-3">
                 {allCourse.map((course) => (
                     <div key={course.id} className="card  m-5 bg-base-100 shadow-xl rounded-lg">
